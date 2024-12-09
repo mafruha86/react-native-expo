@@ -1,10 +1,14 @@
-import { Tabs } from 'expo-router';
+import { Stack } from 'expo-router';
 
-export default function TabLayout() {
+export default function Layout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="(home)" />
-      <Tabs.Screen name="settings" />
-    </Tabs>
+    <Stack>
+      <Stack.Screen
+        name="[profile]"
+        getId={
+          ({ params }) => String(Date.now())
+        }
+      />
+    </Stack>
   );
 }
